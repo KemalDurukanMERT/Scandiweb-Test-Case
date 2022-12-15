@@ -1,0 +1,219 @@
+.toggle__cart {
+  opacity: 1;
+  position: absolute;
+  right: calc(5%);
+  bottom: calc(100% -5rem);
+  overflow: hidden;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, .7);
+  z-index: 999;
+  background-color: white;
+  width: min-content;
+}
+
+.item {
+  padding-top: 7px;
+  color: none;
+  cursor: pointer;
+}
+
+.item:hover {
+  color: var(--dropdown-click);
+}
+
+.mini-cart-item {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px;
+  margin:0;
+  text-transform: uppercase;
+}
+
+.mini-cart-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mini-cart-item__info .brand,
+.mini-cart-item__info .name {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 160%;
+  margin-bottom: 0;
+}
+
+.mini-cart-item__info .price_value {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  margin-bottom: 8px;
+}
+
+.mini-cart-item__attributes .attributes:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.mini-cart-item__attributes .attributes:last-child {
+  margin-bottom: 0px;
+}
+
+.mini-cart-item__attributes-title {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+.mini-cart-item__attributes-text_false,
+.mini-cart-item__attributes-text_true {
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  background-color: rgba(166, 166, 166, 0.2);
+  border: 1px solid #a6a6a6;
+  box-sizing: border-box;
+  padding: 0 3px;
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-cart-item__attributes-text_true {
+  background: #1d1f22;
+  color: #ffffff;
+  border: none;
+}
+
+.mini-cart-item__attributes-color_false,
+.mini-cart-item__attributes-color_true {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+}
+
+.mini-cart-item__attributes-color_true {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px #5ece7b;
+}
+
+.mini-cart-item__attributes-list {
+  display: flex;
+}
+
+.mini-cart-item__attributes-list
+  div:not(.mini-cart-item__attributes-list div:last-child) {
+  margin-right: 8px;
+}
+
+.mini-cart-item__gallery {
+  margin-left: 8px;
+  margin-right: 0;
+  width: 121px;
+  display: flex;
+  align-items: center;
+}
+
+.mini-cart-item__gallery img {
+  max-width: 121px;
+  max-height: 190px;
+}
+
+.mini-cart-item__quantity .quantity {
+  font-size: 16px;
+}
+
+.mini-cart-item__quantity .btn-plus,
+.mini-cart-item__quantity .btn-minus {
+  border: 1px solid black;
+  padding: 4px 8px;
+}
+
+.mini-cart-item__quantity .btn-plus:hover,
+.mini-cart-item__quantity .btn-minus:hover {
+  opacity: 0.3;
+}
+
+.mini-cart-item__quantity .btn-plus span,
+.mini-cart-item__quantity .btn-minus span {
+  width: 8px;
+}
+
+.mini-cart-item__right {
+  margin-right: 0;
+  display: flex;
+}
+
+.mini-cart-item__quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 7px;
+}
+
+.mini-cart__total-price {
+  margin: 32px 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.mini-cart__total-price p:first-child {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 112%;
+}
+
+.mini-cart__total-price p:last-child {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.mini-cart__btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mini-cart__btn {
+  width: 140px;
+  height: 43px;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.mini-cart__btn:active {
+  transform: scale(0.97);
+}
+
+.btn-view {
+  background: #ffffff;
+  border: 1px solid #1d1f22;
+  color: #1d1f22;
+  margin-right: 20px;
+}
+
+.btn-checkout {
+  background: #5ece7b;
+  color: #ffffff;
+}
+
+.btn-checkout:hover,
+.btn-view:hover {
+  opacity: 0.78;
+}
