@@ -8,6 +8,6 @@
     Scandiweb-Test-Case
   </h1><br/>
 
-<img alt="App preview" src="https://github.com/KemalDurukanMERT/Scandiweb-Test-Case/test-case/src/Assets/preview.gif?raw=true">
+<img alt="App preview" src="https://github.com/KemalDurukanMERT/Scandiweb-Test-Case/blob/master/test-case/src/Assets/preview.gif">
 
 </div>
