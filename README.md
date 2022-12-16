@@ -22,12 +22,13 @@ App created with [React](https://reactjs.org/) library.
   
   ## How to run the project:
 
-1. Download [endpoint](https://github.com/scandiweb/junior-react-endpoint) and install dependencies.
-2. Build the endpoint - `yarn build // npm run build`
-3. Start endpoint - `yarn start // npm start`
-4. Download the project and install dependencies
-5. Build the project - `yarn build // npm run build`
-6. Start the project - `npm run start`
+1. Download the project.
+2. Instal dependencies of end point.
+3. Build the endpoint - `yarn build // npm run build`
+4. Start endpoint - `yarn start // npm start`
+5. Install dependencies of project.
+6. Build the project - `yarn build // npm run build`
+7. Start the project - `npm run start`
 
 ### Technologies
 
