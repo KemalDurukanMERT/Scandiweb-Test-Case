@@ -11,7 +11,7 @@ class Price extends Component {
     );
     return (
       <p style={{fontWeight:"bold", color:"#1d1f22", fontSize:"18px"}}>
-          {selectedCurrency[0].currency.symbol} {selectedCurrency[0].amount}
+          {selectedCurrency[0].currency.symbol}{selectedCurrency[0].amount}
       </p>
     );
   }
