@@ -183,12 +183,20 @@ class ProductDetail extends Component {
                   </div>
                 </div>
                 <div className="button-block">
-                  <div
-                    onClick={() => this.handleAdd(product)}
-                    className="add_to_cart"
-                  >
-                    ADD TO CART
-                  </div>
+                  {product.inStock ? (
+                    <div
+                      onClick={() => this.handleAdd(product)}
+                      className="add_to_cart"
+                    >
+                      ADD TO CART
+                    </div>
+                  ) : (
+                    <div
+                      className="out_of_stock_cart"
+                    >
+                      OUT OF STOCK
+                    </div>
+                  )}
                   {this.state.success !== "yes" ? (
                     <p className="warning red">{this.state.warningMessage}</p>
                   ) : (

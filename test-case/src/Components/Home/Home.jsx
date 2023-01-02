@@ -84,11 +84,11 @@ class Home extends Component {
                   <ProductCart
                     key={index}
                     className={`${!item.inStock && "disable"}`}
-                    style={
-                      !item.inStock
-                        ? { pointerEvents: "none", cursor: "unset" }
-                        : {}
-                    }
+                    // style={
+                    //   !item.inStock
+                    //     ? { pointerEvents: "none", cursor: "unset" }
+                    //     : {}
+                    // }
                   >
                     <Link
                       to={{ pathname: `/detail/${item.id}` }}
@@ -105,7 +105,11 @@ class Home extends Component {
                               <OutOfStock>Out of stock</OutOfStock>
                             )}
                           </ImageDiv>
-                          <div className="cartAddIcon">
+                          <div className="cartAddIcon" style={
+                      !item.inStock
+                        ? { display:"none" }
+                        : {}
+                    }>
                             <CartIcon onClick={(e) => handleClick(e, item)}>
                               AddCart
                             </CartIcon>
