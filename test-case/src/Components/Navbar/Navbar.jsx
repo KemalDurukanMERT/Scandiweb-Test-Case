@@ -6,18 +6,10 @@ import MiniCart from "./MiniCart/MiniCart";
 import { connect } from "react-redux";
 import { currencyClick, miniCartClick } from "../../Redux/action";
 import { ReactComponent as Down } from "../../pics/down.svg";
-import { AmountCircle, NavbarOutside } from "./navbar.styled";
 import trolley from "../../pics/trolley.png";
+import "./Navbar.css"
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      title: this.props.title,
-      categoryName: this.props.categoryName,
-    };
-  }
   render() {
     const handleClick = () => {
       this.props.miniCartClick();
@@ -27,44 +19,39 @@ class Navbar extends Component {
     };
 
     return (
-      <NavbarOutside>
-        <div>
-          <Categories />
+      <div className="navbar">
+        <div className="categories">
+          <Categories className="categories"/>
         </div>
-        <div>
+        <div className="logo">
           <HeaderLogo />
         </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <div>
+        <div className="actions">
+          <div className="currency-area">
             <div
-              style={{
-                fontSize: "x-large",
-                display: "flex",
-              }}
+              className="currency"
               onClick={() => handleDropdown()}
             >
-              {this.props.currency ? this.props.currency : "$"}
-              <Down style={{ marginLeft: "0.5rem", alignSelf: "center" }} />
+              <p>{this.props.currency ? this.props.currency : "$"}</p>
+              <Down />
             </div>
             {this.props.currencyOpen ? <CurrencyDropdown /> : ""}
           </div>
           <div>
-            <div onClick={() => handleClick()}>
-              {" "}
+            <div className="mini-cart" onClick={() => handleClick()}>
               <img
                 src={trolley}
                 alt=""
-                height={23}
-                style={{ objectFit: "contain" }}
+                width="20px"
               />
               {this.props.cart.length !== 0 && (
-                <AmountCircle>{this.props.totalAmount}</AmountCircle>
+                <div className="amount-circle">{this.props.totalAmount}</div>
               )}
             </div>
             {this.props.miniCartOpen ? <MiniCart /> : ""}
           </div>
         </div>
-      </NavbarOutside>
+      </div>
     );
   }
 }

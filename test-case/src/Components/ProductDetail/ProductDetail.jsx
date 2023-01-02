@@ -156,10 +156,10 @@ class ProductDetail extends Component {
                                               ? "black"
                                               : item.value
                                           }`,
-                                          margin: "0rem",
+                                          marginRight: "1rem",
                                         }
                                       : {
-                                          margin: "0rem",
+                                          marginRight: "1rem",
                                         }
                                   }
                                 >

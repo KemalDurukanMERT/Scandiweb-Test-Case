@@ -1,7 +1,8 @@
 .detailed_details {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0px 26px;
+    margin: 6.5rem;
 
 }
 
@@ -12,6 +13,7 @@
     justify-content: space-evenly;
     padding: 30px 0px;
     line-height: .7rem;
+    /* border: 3px solid; */
 
 }
 
@@ -25,7 +27,7 @@
 
 
 .iSmall {
-    height: 9vh;
+    height: 12vh;
     object-fit: contain;
     padding-bottom: .8rem;
     cursor: pointer;
@@ -45,12 +47,6 @@
 
 
 /* CART SECTION */
-.cart__details {
-    width: 100%;
-
-
-}
-
 .label,
 .attributes__title {
     margin-top: 20px;
@@ -160,7 +156,7 @@
 
 .attributes {
     margin-bottom: 20px;
-    line-height: 0rem;
+    line-height: 1rem;
 }
 
 .attributes__title {
@@ -170,7 +166,7 @@
 .attributes__list {
     display: flex;
     align-items: center;
-    margin: 8px 0;
+    margin: 1rem 0;
 }
 
 input {

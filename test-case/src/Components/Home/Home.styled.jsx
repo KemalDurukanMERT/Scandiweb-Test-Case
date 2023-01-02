@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const CategoryName = styled.div`
-  margin: 1.7rem;
+  margin-left: 6.5rem;
+  margin-top:3rem;
   font-weight: 600 normal;
   font-size: 4rem;
   ::first-letter {
@@ -16,7 +17,7 @@ export const ProductList = styled.div`
   justify-content: space-evenly;
   text-align: start;
   gap: 4rem;
-  margin: 1.7rem;
+  margin: 6.5rem;
   padding: 1rem;
 `;
 
@@ -55,14 +56,13 @@ export const ImageDiv = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
 `;
 
 export const Image = styled.img`
-  width: 100%;
+  width: 80%;
   height: 27rem;
   object-fit: contain;
-  max-width: 30rem;
 `;
 
 export const OutOfStock = styled.div`

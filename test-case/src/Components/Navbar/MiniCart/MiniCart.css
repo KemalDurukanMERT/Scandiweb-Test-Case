@@ -1,8 +1,8 @@
 .toggle__cart {
   opacity: 1;
   position: absolute;
-  right: calc(5%);
-  bottom: calc(100% -5rem);
+  right: 5%;
+  bottom: -20rem;
   overflow: hidden;
   padding: 0.75rem;
   border-radius: 0.25rem;
