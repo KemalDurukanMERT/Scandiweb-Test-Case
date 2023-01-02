@@ -41,7 +41,8 @@ class Home extends Component {
               if (data.category === undefined) return null;
 
               const products = data.category.products;
-              const handleClick = (product) => {
+              const handleClick = (e, product) => {
+                e.preventDefault()
                 let updatedProduct = {};
                 if (product.attributes.length === 0) {
                   updatedProduct = {
@@ -105,7 +106,7 @@ class Home extends Component {
                             )}
                           </ImageDiv>
                           <div className="cartAddIcon">
-                            <CartIcon onClick={() => handleClick(item)}>
+                            <CartIcon onClick={(e) => handleClick(e, item)}>
                               AddCart
                             </CartIcon>
                           </div>
