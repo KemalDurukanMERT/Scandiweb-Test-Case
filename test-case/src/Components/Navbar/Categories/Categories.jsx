@@ -24,8 +24,8 @@ class Categories extends Component {
             return categories.map((item, index) => (
               <Link key={index} to={`/${item.name}`}>
                 <CategoryItem>
-                  <Button onClick={() => handleClick(item.name)}>
-                    {item.name.toUpperCase()}
+                  <Button className={localStorage.getItem("category") === item.name ? "selected-category" : ""} onClick={() => handleClick(item.name)}>
+                    <p>{item.name.toUpperCase()}</p>
                   </Button>
                 </CategoryItem>
               </Link>

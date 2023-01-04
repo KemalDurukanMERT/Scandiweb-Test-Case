@@ -13,6 +13,7 @@ const initialState = {
     : localStorage.getItem("currency"),
   currencyOpen: false,
   miniCartOpen: false,
+  mainOpacity: false,
 };
 
 export default function reducer(state = initialState, action) {
@@ -113,6 +114,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         currencyOpen: false,
         miniCartOpen: !state.miniCartOpen,
+        mainOpacity: !state.mainOpacity,
       };
       return newCartState;
 
@@ -120,6 +122,7 @@ export default function reducer(state = initialState, action) {
       let newCurrencyState = {
         ...state,
         miniCartOpen: false,
+        mainOpacity: false,
         currencyOpen: !state.currencyOpen,
       };
       return newCurrencyState;
@@ -130,6 +133,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         category: category,
         miniCartOpen: false,
+        mainOpacity: false,
       };
       localStorage.setItem("category", newCategory.category);
       return newCategory;
@@ -138,6 +142,7 @@ export default function reducer(state = initialState, action) {
       let newPage = {
         ...state,
         miniCartOpen: false,
+        mainOpacity: false,
         currencyOpen: false,
       };
       return newPage;

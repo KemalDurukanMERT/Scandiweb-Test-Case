@@ -25,12 +25,10 @@ class CurrencyDropdown extends Component {
               <div>
                 {currencies.map((currency, index) => (
                   <Currency
-                    style={{ display: "flex", justifyContent: "space-around", lineHeight:"160%" }}
                     key={index}
                     onClick={() => handleSelect(currency.symbol)}
                   >
-                    <div>{currency.symbol}</div>
-                    <div>{currency.label}</div>
+                    {currency.symbol} {currency.label}
                   </Currency>
                 ))}
               </div>

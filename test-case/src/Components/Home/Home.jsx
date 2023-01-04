@@ -13,6 +13,8 @@ import {
   CategoryName,
   Image,
   ImageDiv,
+  MainOpacity,
+  // MainOpacity,
   OutOfStock,
   ProductCart,
   ProductList,
@@ -22,7 +24,8 @@ import { ReactComponent as CartIcon } from "../../pics/green-cart-icon.svg";
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div style={{ position: "relative" }}>
+        {this.props.mainOpacity && <MainOpacity>.</MainOpacity>}
         <CategoryName>
           <p>{this.props.category}</p>
         </CategoryName>
@@ -42,7 +45,7 @@ class Home extends Component {
 
               const products = data.category.products;
               const handleClick = (e, product) => {
-                e.preventDefault()
+                e.preventDefault();
                 let updatedProduct = {};
                 if (product.attributes.length === 0) {
                   updatedProduct = {
@@ -69,7 +72,9 @@ class Home extends Component {
                     ...product,
                     attributes: updatedAttributes,
                     amount: 1,
-                    id: `${product.id} ${selectedAttribute.map((i) => i.id).join(" ")}`,
+                    id: `${product.id} ${selectedAttribute
+                      .map((i) => i.id)
+                      .join(" ")}`,
                   };
                   this.props.addProductToCart(updatedProduct);
                 }
@@ -97,19 +102,15 @@ class Home extends Component {
                       <div onClick={() => handleDetail()}>
                         <div>
                           <ImageDiv>
-                            <Image
-                              src={item.gallery[0]}
-                              alt=""
-                            />
+                            <Image src={item.gallery[0]} alt="" />
                             {!item.inStock && (
                               <OutOfStock>Out of stock</OutOfStock>
                             )}
                           </ImageDiv>
-                          <div className="cartAddIcon" style={
-                      !item.inStock
-                        ? { display:"none" }
-                        : {}
-                    }>
+                          <div
+                            className="cartAddIcon"
+                            style={!item.inStock ? { display: "none" } : {}}
+                          >
                             <CartIcon onClick={(e) => handleClick(e, item)}>
                               AddCart
                             </CartIcon>
@@ -118,9 +119,12 @@ class Home extends Component {
                           <div
                             style={
                               !item.inStock
-                                ? {background: "#ffffff",
-                                  opacity: "0.5"}
-                                : {}
+                                ? {
+                                    // background: "#ffffff",
+                                    opacity: "0.5",
+                                    marginLeft: "2rem",
+                                  }
+                                : { marginLeft: "2rem" }
                             }
                           >
                             <p>{item.name}</p>
@@ -146,6 +150,7 @@ const mapStateToProps = (state) => {
     cart: state.reducer.cart,
     totalAmount: state.reducer.totalAmount,
     category: state.reducer.category,
+    mainOpacity: state.reducer.mainOpacity,
   };
 };
 

@@ -4,7 +4,7 @@
   height: 5rem;
   top: 0px;
   left: 0px;
-  /* border:3px solid */
+  /* z-index: 999; */
 }
 
 .categories {
@@ -19,6 +19,14 @@
   left: 6.5rem;
   bottom: 0;
   /* border:3px solid */
+}
+
+.selected-category {
+  border-bottom: #5ece7b solid;
+}
+
+.selected-category p {
+  color: #5ece7b;
 }
 
 .logo {
@@ -37,7 +45,7 @@
   position: absolute;
   right: 6.5rem;
   /* border: 3px solid; */
-  height:2.5rem
+  height: 2.5rem;
 }
 
 .actions .currency,
@@ -50,19 +58,27 @@
   font-weight: 500;
   font-size: 18px;
   width: 3rem;
+  cursor: pointer;
 }
 
-.actions .currency:hover, .mini-cart:hover{
-    color: #5ece7b;
-    border-bottom: 3px solid #5ece7b;
-}
+/* .actions .currency:hover,
+.mini-cart:hover {
+  color: #5ece7b;
+  border-bottom: 3px solid #5ece7b;
+} */
 
 .actions p {
   display: inline;
-  margin-right: 0.2rem;
+  margin-right: 0.3rem;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  text-transform: uppercase;
 }
 
-.amount-circle{
+.amount-circle {
   position: absolute;
   top: -0.5rem;
   right: 0rem;

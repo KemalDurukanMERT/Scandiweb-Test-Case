@@ -45,7 +45,6 @@ class MiniCart extends Component {
             <div>
               <b>My Bag</b> {localStorage.getItem("totalAmount")} items
             </div>
-            <hr />
             {cartt.map((item, index) => {
               return (
                 <div className="mini-cart-item" key={index}>
