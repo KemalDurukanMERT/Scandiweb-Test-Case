@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const HomeComponent = styled.div`
+  position: relative;
+`
+
 export const CategoryName = styled.div`
   margin-left: 6.5rem;
   margin-top:1rem;
@@ -78,16 +82,12 @@ export const OutOfStock = styled.div`
   background: white;
   opacity:0.3;
   z-index:2;
-  /* border: 3px solid red; */
 `;
 
 
 export const MainOpacity = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 0;
   left: 0;

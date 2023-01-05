@@ -86,6 +86,7 @@ class ProductDetail extends Component {
           const product = data.product;
           return (
             <div className="detailed_details">
+              {this.props.mainOpacity && <div className="main-opacity"></div>}
               <div className="images__section">
                 <div className="SmallImg">
                   {product.gallery.map((image, index) => (
@@ -222,6 +223,7 @@ class ProductDetail extends Component {
 const mapStateToProps = (state) => {
   return {
     cart: state.reducer.cart,
+    mainOpacity: state.reducer.mainOpacity,
   };
 };
 

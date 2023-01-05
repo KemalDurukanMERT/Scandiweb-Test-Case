@@ -11,10 +11,10 @@ import {
 import Price from "../Price/Price";
 import {
   CategoryName,
+  HomeComponent,
   Image,
   ImageDiv,
   MainOpacity,
-  // MainOpacity,
   OutOfStock,
   ProductCart,
   ProductList,
@@ -24,8 +24,8 @@ import { ReactComponent as CartIcon } from "../../pics/green-cart-icon.svg";
 class Home extends Component {
   render() {
     return (
-      <div style={{ position: "relative" }}>
-        {this.props.mainOpacity && <MainOpacity>.</MainOpacity>}
+      <HomeComponent>
+        {this.props.mainOpacity && <MainOpacity></MainOpacity>}
         <CategoryName>
           <p>{this.props.category}</p>
         </CategoryName>
@@ -140,7 +140,7 @@ class Home extends Component {
             }}
           </Query>
         </ProductList>
-      </div>
+      </HomeComponent>
     );
   }
 }
