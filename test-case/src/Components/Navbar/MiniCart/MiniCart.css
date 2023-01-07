@@ -10,8 +10,6 @@
   right: 5%;
   top: 3.5rem;
   background: white;
-  /* width: 340px; */
-  height: fit-content;
   max-height: 677px;
 
   z-index: 999;
@@ -24,8 +22,7 @@
   padding: 0px;
   gap: 32px;
 
-  /* width: 293px; */
-  height: 538px;
+  max-height: 538px;
 }
 
 .bag-header {
@@ -49,8 +46,7 @@
   padding: 0px;
   gap: 40px;
 
-  /* width: 293px; */
-  height: 420px;
+  max-height: 420px;
   overflow-y: scroll;
 }
 
