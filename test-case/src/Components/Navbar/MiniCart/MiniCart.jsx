@@ -52,6 +52,7 @@ class MiniCart extends Component {
                     <div className="frame8">
                       <div className="frame7">
                         <div className="frame3">
+                          <div className="name">{item.brand}</div>
                           <div className="name">{item.name}</div>
                           <div className="price">
                             <Price prices={item.prices} />
@@ -71,7 +72,8 @@ class MiniCart extends Component {
                                     id={`${attribute.id} ${item.id}`}
                                     name={attribute.name + index}
                                     value={item.value}
-                                    disabled={item.selected}
+                                    checked={item.selected}
+                                    disabled={true}
                                   />
                                   <label htmlFor={`${attribute.id} ${item.id}`}>
                                     <div

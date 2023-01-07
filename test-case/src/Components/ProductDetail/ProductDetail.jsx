@@ -5,7 +5,6 @@ import Price from "../Price/Price";
 import { connect } from "react-redux";
 import { addProductToCart } from "../../Redux/action";
 import "./ProductDetail.css";
-import { Link } from "react-router-dom";
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -85,132 +84,124 @@ class ProductDetail extends Component {
 
           const product = data.product;
           return (
-            <div className="detailed_details">
+            <div className="product-detail-main">
               {this.props.mainOpacity && <div className="main-opacity"></div>}
-              <div className="images__section">
-                <div className="SmallImg">
+              <div className="product-details">
+                <div className="images-section">
                   {product.gallery.map((image, index) => (
                     <img
                       key={index}
-                      className="iSmall"
                       onClick={() => selectImage(image)}
                       src={image}
                       alt=""
                     />
                   ))}
                 </div>
+                <div className="info-area">
+                  <div className="selected-image">
+                    <img
+                      src={
+                        this.state.selectedImage
+                          ? this.state.selectedImage
+                          : product.gallery[0]
+                      }
+                      alt=""
+                    />
+                  </div>
 
-                <img
-                  src={
-                    this.state.selectedImage
-                      ? this.state.selectedImage
-                      : product.gallery[0]
-                  }
-                  className="LargeImg"
-                  alt=""
-                />
-              </div>
-
-              <div className="cart__details">
-                <h2 className="product__name">{product.name}</h2>
-
-                <p className="product__brand">{product.brand}</p>
-                <br />
-
-                <div className="attributes-all">
-                  {product.attributes.map((attribute) => {
-                    // console.log(product);
-                    return (
-                      <div
-                        className="attributes"
-                        key={`${product.name} ${attribute.id}`}
-                      >
-                        <p className="attributes__title title">{`${attribute.name}:`}</p>
-                        <div className="attributes__list">
-                          {attribute.items.map((item) => (
-                            <div key={`${product.name} ${item.id}`}>
-                              <input
-                                type="radio"
-                                id={`${product.id} ${attribute.id} ${item.id}`}
-                                name={attribute.name}
-                                value={item.value}
-                                disabled={product.inStock ? false : true}
-                                checked={item.selected}
-                                onChange={this.handleOnChange}
-                              />
-                              <label
-                                htmlFor={`${product.id} ${attribute.id} ${item.id}`}
-                              >
-                                <div
-                                  key={`${product.id} ${attribute.id} ${item.id}`}
-                                  className={
-                                    attribute.type === "swatch"
-                                      ? "attributes__color"
-                                      : "attributes__text"
-                                  }
-                                  style={
-                                    attribute.type === "swatch"
-                                      ? {
-                                          background: item.value,
-                                          border: `1px solid ${
-                                            item.id === "White"
-                                              ? "black"
-                                              : item.value
-                                          }`,
-                                          marginRight: "1rem",
-                                        }
-                                      : {
-                                          marginRight: "1rem",
-                                        }
-                                  }
-                                >
-                                  {attribute.type === "swatch"
-                                    ? ""
-                                    : item.value}
-                                </div>
-                              </label>
+                  <div className="cart-details">
+                    <div className="product-brand">{product.brand}</div>
+                    <div className="product-name">{product.name}</div>
+                    <div className="all-attributes">
+                      {product.attributes.map((attribute) => {
+                        return (
+                          <div
+                            className="attribute-area"
+                            key={`${product.name} ${attribute.id}`}
+                          >
+                            <div className="attribute-title">
+                              {attribute.name}:
                             </div>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                            <div className="attribute-list">
+                              {attribute.items.map((item) => (
+                                <div key={`${product.name} ${item.id}`}>
+                                  <input
+                                    type="radio"
+                                    id={`${product.id} ${attribute.id} ${item.id}`}
+                                    name={attribute.name}
+                                    value={item.value}
+                                    disabled={product.inStock ? false : true}
+                                    checked={item.selected}
+                                    onChange={this.handleOnChange}
+                                  />
+                                  <label
+                                    htmlFor={`${product.id} ${attribute.id} ${item.id}`}
+                                  >
+                                    <div
+                                      key={`${product.id} ${attribute.id} ${item.id}`}
+                                      className={
+                                        attribute.type === "swatch"
+                                          ? "attribute-color"
+                                          : "attribute-text"
+                                      }
+                                      style={
+                                        attribute.type === "swatch"
+                                          ? {
+                                              background: item.value,
+                                              border: `1px solid ${
+                                                item.id === "White"
+                                                  ? "black"
+                                                  : item.value
+                                              }`,
+                                            }
+                                          : {}
+                                      }
+                                    >
+                                      {attribute.type === "swatch"
+                                        ? ""
+                                        : item.value}
+                                    </div>
+                                  </label>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
 
-                <div className="details_price">
-                  <div className="label">PRICE:</div>
-                  <div className="price__tag">
-                    <Price prices={product.prices} />
+                    <div className="price-area">
+                      <div className="label">PRICE:</div>
+                      <div className="price-attribute">
+                        <Price prices={product.prices} />
+                      </div>
+                    </div>
+                    <div className="button-block">
+                      {product.inStock ? (
+                        <div
+                          onClick={() => this.handleAdd(product)}
+                          className="add_to_cart"
+                        >
+                          ADD TO CART
+                        </div>
+                      ) : (
+                        <div className="out_of_stock_cart">OUT OF STOCK</div>
+                      )}
+                      {/* {this.state.success !== "yes" ? (
+                      <p className="warning red">{this.state.warningMessage}</p>
+                    ) : (
+                      <p className="success green">
+                        Item has been added to cart!{" "}
+                        <Link to="/"> continue shopping</Link>
+                      </p>
+                    )} */}
+                    </div>
+                    <div
+                      className="description"
+                      dangerouslySetInnerHTML={{ __html: product.description }}
+                    ></div>
                   </div>
                 </div>
-                <div className="button-block">
-                  {product.inStock ? (
-                    <div
-                      onClick={() => this.handleAdd(product)}
-                      className="add_to_cart"
-                    >
-                      ADD TO CART
-                    </div>
-                  ) : (
-                    <div
-                      className="out_of_stock_cart"
-                    >
-                      OUT OF STOCK
-                    </div>
-                  )}
-                  {this.state.success !== "yes" ? (
-                    <p className="warning red">{this.state.warningMessage}</p>
-                  ) : (
-                    <p className="success green">
-                      Item has been added to cart!{" "}
-                      <Link to="/"> continue shopping</Link>
-                    </p>
-                  )}
-                </div>
-                <div
-                  className="description"
-                  dangerouslySetInnerHTML={{ __html: product.description }}
-                ></div>
               </div>
             </div>
           );

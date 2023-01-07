@@ -1,64 +1,132 @@
-.detailed_details {
+.product-detail-main{
   position: relative;
+}
+.product-details {
   display: flex;
-  justify-content: center;
-  padding: 0px 26px;
-  margin: 6.5rem;
+  justify-content: flex-start;
+  margin-left: 6.5rem;
+  margin-right: 6.5rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
 }
 
-.main-opacity {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(57, 55, 72, 0.22);
-  z-index: 40;
-}
-
-/* IMAGES SECTION */
-.images__section {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  padding: 30px 0px;
-  line-height: 0.7rem;
-  /* border: 3px solid; */
-}
-
-.SmallImg {
+.images-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  row-gap: 1rem;
+  margin-right: 1rem;
 }
 
-.iSmall {
-  height: 12vh;
+.images-section img {
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  padding-bottom: 0.8rem;
-  cursor: pointer;
 }
 
-.LargeImg {
-  height: 65vh;
-  width: 40vw;
+.info-area {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  height: 600px;
+}
+
+.selected-image img {
   object-fit: contain;
-  padding: 0px 30px;
+  width: 610px;
+  height: 511px;
 }
 
-/* CART SECTION */
-.label,
-.attributes__title {
-  margin-top: 20px;
-  margin-bottom: -17px;
-  font-weight: 700;
-  font-size: large;
+.cart-details {
+  display: flex;
+  flex-direction: column;
+  width: 292px;
+}
+
+.product-brand {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 27px;
+}
+
+.product-name {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 27px;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.all-attributes {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.attribute-title,
+.label {
   text-transform: uppercase;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 0.5rem;
+}
+
+.attribute-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 63px;
+  height: 45px;
+  border: 1px solid #1d1f22;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.attribute-color {
+  width: 36px;
+  height: 36px;
+}
+
+.price-area {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.price-attribute {
+  font-family: "Raleway";
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+:checked + label .attribute-text {
+  background: #1d1f22;
+  color: #ffffff;
+}
+
+:disabled + label .attribute-text {
+  border: 1px solid #a6a6a6;
+  color: #a6a6a6;
+  cursor: default;
+}
+
+:checked + label .attribute-color {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 4px #5ece7b;
 }
 
 .add_to_cart {
-  width: 20vw;
+  width: 100%;
   text-align: center;
   padding: 16px 25px;
   margin-right: 15px;
@@ -75,7 +143,7 @@
   color: #222;
 }
 .out_of_stock_cart {
-  width: 20vw;
+  width: 100%;
   text-align: center;
   padding: 16px 25px;
   margin-right: 15px;
@@ -92,14 +160,6 @@
   color: white;
 }
 
-.price__tag {
-  padding-top: 25px;
-  display: flex;
-  align-items: center;
-  font-size: large;
-  font-weight: 500;
-}
-
 .description {
   font-family: "Roboto";
   font-weight: 400;
@@ -107,20 +167,7 @@
   line-height: 159.96%;
   max-height: 200px;
   overflow-y: auto;
-  padding-right: 5px;
-}
-
-.product__brand {
-  font-size: 2rem;
-  margin-top: 3rem;
-}
-
-.description {
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 16px;
-  height: fit-content;
-  padding-right: 5px;
+  margin-top: 1.5rem;
 }
 
 .description h1 {
@@ -140,83 +187,18 @@
   margin-bottom: 1em;
 }
 
-/* REFACTORING CODE  */
-
-.attributes-all {
-  margin: 43px 0 40px;
-}
-
-.attributes {
-  margin-bottom: 20px;
-  line-height: 1rem;
-}
-
-.attributes__title {
-  margin-bottom: 8px;
-}
-
-.attributes__list {
-  display: flex;
-  align-items: center;
-  margin: 1rem 0;
-}
-
 input {
   display: none;
 }
 
-.attributes__text {
-  width: 63px;
-  height: 45px;
-  margin-right: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #1d1f22;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.05em;
-  font-family: "Source Sans Pro", sans-serif;
-  box-sizing: border-box;
-  cursor: pointer;
+.main-opacity{
+  width: 100%;
+  height: 100%;
+  min-height: 677px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(57,55,72,0.22);
+  z-index:40;
 }
 
-:checked + label .attributes__text {
-  background: #1d1f22;
-  color: #ffffff;
-}
-
-:disabled + label .attributes__text {
-  border: 1px solid #a6a6a6;
-  color: #a6a6a6;
-  cursor: default;
-}
-
-.attributes__color {
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-:checked + label .attributes__color {
-  box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px #5ece7b;
-}
-
-.warning,
-.success {
-  height: 15px;
-  margin-bottom: 25px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.red {
-  color: red;
-}
-
-.green {
-  color: green;
-}

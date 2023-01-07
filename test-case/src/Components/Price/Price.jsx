@@ -10,9 +10,10 @@ class Price extends Component {
         (this.props.currency ? this.props.currency : "$")
     );
     return (
-      <p style={{fontWeight:"bold", color:"#1d1f22", fontSize:"18px"}}>
-          {selectedCurrency[0].currency.symbol}{selectedCurrency[0].amount}
-      </p>
+      <div>
+        {selectedCurrency[0].currency.symbol}
+        {selectedCurrency[0].amount}
+      </div>
     );
   }
 }

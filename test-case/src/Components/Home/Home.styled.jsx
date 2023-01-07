@@ -31,7 +31,7 @@ export const ProductCart = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
-  width: 20rem;
+  width: 25vw;
   :hover {
     transition: all 300ms ease-in-out;
     transform: scale(1.05);
@@ -83,6 +83,11 @@ export const OutOfStock = styled.div`
   opacity:0.3;
   z-index:2;
 `;
+
+export const PriceArea = styled.div`
+  font-weight:700;
+  margin-top:1rem;
+`
 
 
 export const MainOpacity = styled.div`

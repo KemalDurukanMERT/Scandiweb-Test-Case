@@ -16,6 +16,7 @@ import {
   ImageDiv,
   MainOpacity,
   OutOfStock,
+  PriceArea,
   ProductCart,
   ProductList,
 } from "./Home.styled";
@@ -128,7 +129,9 @@ class Home extends Component {
                             }
                           >
                             <p>{item.name}</p>
-                            <Price prices={item.prices} />
+                            <PriceArea>
+                              <Price prices={item.prices} />
+                            </PriceArea>
                           </div>
                         </div>
                       </div>

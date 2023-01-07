@@ -1,0 +1,247 @@
+.cart-main {
+  position: relative;
+}
+
+.main-opacity {
+  width: 100%;
+  height: 100%;
+  min-height: 677px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(57, 55, 72, 0.22);
+  z-index: 40;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* border: 3px solid blue; */
+
+  margin-left: 6.5rem;
+  margin-right: 6.5rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
+.cart-header {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 2rem;
+  /* border: 3px solid green; */
+}
+
+.cart-items {
+  max-height: 80vh;
+  overflow-y: scroll;
+  min-width: 100%;
+}
+
+/* .cart-items::-webkit-scrollbar{
+  display: none;
+} */
+
+.item {
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.brand {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 27px;
+}
+
+.cart-name {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 27px;
+}
+
+.cart-price {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.attribute-side {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.attribute {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.cart-attribute-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+:checked + label .attribute-list-item-text {
+  width: 63px;
+  height: 45px;
+  background: #1d1f22;
+  border: 1px solid #1d1f22;
+
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+}
+
+.attribute-list-item-text {
+  width: 63px;
+  height: 45px;
+  background: white;
+  border: 1px solid #1d1f22;
+
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+}
+:checked + label .attribute-list-item-color {
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #5ece7b;
+}
+.attribute-list-item-color {
+  width: 32px;
+  height: 32px;
+}
+
+.item-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.amount-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.plus-button,
+.minus-button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #1d1f22;
+}
+
+.plus-button span,
+.minus-button span {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 160%;
+
+  position: relative;
+  left: 30%;
+  bottom: 20%;
+  color: #1d1f22;
+}
+
+.image-side {
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-side img {
+  width: 200px;
+  height: 288px;
+  object-fit: contain;
+}
+
+.data-result {
+  margin-top: 2rem;
+}
+.label1,
+.label2,
+.label3 {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  width: 7rem;
+  margin-bottom: 1rem;
+}
+
+.result {
+  display: inline;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.button {
+  width: 25rem;
+  text-align: center;
+  padding: 16px 25px;
+  margin-right: 15px;
+  margin-bottom: 9px;
+  margin-top: 30px;
+  color: white;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  background-color: #499c34;
+}
+
+.button:hover {
+  background-color: #76af68;
+  color: #222;
+}

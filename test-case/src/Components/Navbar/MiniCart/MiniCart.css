@@ -10,8 +10,9 @@
   right: 5%;
   top: 3.5rem;
   background: white;
-  width: 325px;
-  height: 677px;
+  /* width: 340px; */
+  height: fit-content;
+  max-height: 677px;
 
   z-index: 999;
 }
@@ -23,12 +24,12 @@
   padding: 0px;
   gap: 32px;
 
-  width: 293px;
+  /* width: 293px; */
   height: 538px;
 }
 
 .bag-header {
-  width: 118px;
+  /* width: 118px; */
   height: 26px;
 
   font-family: "Raleway";
@@ -48,7 +49,7 @@
   padding: 0px;
   gap: 40px;
 
-  width: 293px;
+  /* width: 293px; */
   height: 420px;
   overflow-y: scroll;
 }
@@ -64,8 +65,6 @@
   padding: 0px;
   gap: 8px;
 
-  width: 293px;
-  height: 190px;
 }
 
 .frame8 {
@@ -75,8 +74,6 @@
   padding: 0px;
   gap: 4px;
 
-  width: 164px;
-  height: 190px;
 }
 
 .frame7 {
@@ -84,10 +81,15 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 8px;
+  gap: 1rem;
+  max-height: 190px;
+  overflow: scroll;
 
-  width: 136px;
-  height: 190px;
+  width: 160px;
+}
+
+.frame7::-webkit-scrollbar{
+  display: none;
 }
 
 .frame3 {
@@ -97,13 +99,13 @@
   padding: 0px;
   gap: 4px;
 
-  width: 136px;
-  height: 82px;
+  /* width: 136px; */
+  /* height: 110px; */
 }
 
 .name {
-  width: 136px;
-  height: 52px;
+  /* width: 136px; */
+  height: 25px;
 
   font-family: "Raleway";
   font-style: normal;
@@ -116,6 +118,8 @@
   justify-content: flex-start;
 
   color: #1d1f22;
+  margin-bottom: 0.5rem;
+
 }
 
 .price {
@@ -124,7 +128,7 @@
 
   font-family: "Raleway";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   line-height: 160%;
 
@@ -140,12 +144,12 @@
   padding: 0px;
   gap: 8px;
 
-  width: 120px;
+  width: 160px;
   height: 48px;
 }
 
 .attribute-name {
-  width: 30px;
+  width: 100%;
   height: 16px;
 
   font-family: "Raleway";
@@ -181,6 +185,8 @@
   justify-content: center;
 
   width: max-content;
+  min-width: 24px;
+  
   padding-right: 0.3rem;
   padding-left: 0.3rem;
   height: 24px;
@@ -202,6 +208,7 @@
   justify-content: center;
 
   width: max-content;
+  min-width: 24px;
   padding-right: 0.3rem;
   padding-left: 0.3rem;
   height: 24px;
@@ -224,17 +231,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
-  gap: 32px;
-
   width: 24px;
   height: 190px;
+  
 }
 
 .btn {
   width: 24px;
   height: 24px;
   border: 1px solid #1d1f22;
+  cursor: pointer;
 }
 
 .btn span {
@@ -261,6 +267,13 @@
   line-height: 160%;
 
   text-align: center;
+}
+
+.item-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-image img {
@@ -312,6 +325,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .btn-view {
