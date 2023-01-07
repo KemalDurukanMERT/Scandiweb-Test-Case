@@ -87,8 +87,8 @@ class Home extends Component {
               };
 
               return products.map((item, index) => (
-                <div>
-                  <ProductCart key={index}>
+                <div key={index}>
+                  <ProductCart >
                     <Link
                       to={{ pathname: `/detail/${item.id}` }}
                       className="link"

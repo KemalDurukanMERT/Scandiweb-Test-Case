@@ -43,94 +43,92 @@ class CartComponent extends Component {
         <div className="cart">
           <div className="cart-header">CART</div>
           <div className="cart-items">
-            {cartt.map((item, index) => {
-              return (
-                <div key={`${item.id} ${index}`} className="item">
-                  <div className="item-left">
-                    <div className="brand">{item.brand}</div>
-                    <div className="cart-name">{item.name}</div>
-                    <div className="cart-price">
-                      <Price prices={item.prices} />
-                    </div>
-                    <div className="attribute-side">
-                      {item.attributes.map((attribute) => (
-                        <div
-                          className="attribute"
-                          key={`${item.id} ${attribute.name}`}
-                        >
-                          <div className="cart-attribute-name">
-                            {attribute.name}:
-                          </div>
-                          <div className="attribute-list">
-                            {attribute.items.map((itemm) => (
-                              <div
-                                key={`${item.id} ${itemm.id}`}
-                                className="attribute-list-item"
-                              >
-                                <input
-                                  type="radio"
-                                  id={`${attribute.id} ${itemm.id}`}
-                                  name={attribute.name + index}
-                                  value={itemm.value}
-                                  defaultChecked={itemm.selected}
-                                />
-                                <label htmlFor={`${attribute.id} ${itemm.id}`}>
-                                  <div
-                                    className={
-                                      attribute.type !== "swatch"
-                                        ? "attribute-list-item-text"
-                                        : "attribute-list-item-color"
-                                    }
-                                    style={
-                                      attribute.type === "swatch"
-                                        ? {
-                                            background: itemm.value,
-                                            border: `1px solid ${
-                                              itemm.id === "White"
-                                                ? "black"
-                                                : itemm.value
-                                            }`,
-                                          }
-                                        : {}
-                                    }
-                                  >
-                                    <div className="attribute-label">
-                                      {attribute.type === "swatch"
-                                        ? ""
-                                        : itemm.value}
-                                    </div>
-                                  </div>
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+            {cartt.map((item, index) => (
+              <div key={`${item.id} ${index}`} className="item">
+                <div className="item-left">
+                  <div className="brand">{item.brand}</div>
+                  <div className="cart-name">{item.name}</div>
+                  <div className="cart-price">
+                    <Price prices={item.prices} />
                   </div>
-                  <div className="item-right">
-                    <div className="amount-button">
+                  <div className="attribute-side">
+                    {item.attributes.map((attribute) => (
                       <div
-                        className="plus-button"
-                        onClick={() => handlePlus(item)}
+                        className="attribute"
+                        key={`${item.id} ${attribute.name}`}
                       >
-                        <span>+</span>
+                        <div className="cart-attribute-name">
+                          {attribute.name}:
+                        </div>
+                        <div className="attribute-list">
+                          {attribute.items.map((itemm) => (
+                            <div
+                              key={`${item.id} ${itemm.id}`}
+                              className="attribute-list-item"
+                            >
+                              <input
+                                type="radio"
+                                id={`${attribute.id} ${itemm.id}`}
+                                name={attribute.name + index}
+                                value={itemm.value}
+                                defaultChecked={itemm.selected}
+                              />
+                              <label htmlFor={`${attribute.id} ${itemm.id}`}>
+                                <div
+                                  className={
+                                    attribute.type !== "swatch"
+                                      ? "attribute-list-item-text"
+                                      : "attribute-list-item-color"
+                                  }
+                                  style={
+                                    attribute.type === "swatch"
+                                      ? {
+                                          background: itemm.value,
+                                          border: `1px solid ${
+                                            itemm.id === "White"
+                                              ? "black"
+                                              : itemm.value
+                                          }`,
+                                        }
+                                      : {}
+                                  }
+                                >
+                                  <div className="attribute-label">
+                                    {attribute.type === "swatch"
+                                      ? ""
+                                      : itemm.value}
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <div className="quantity">{item.amount}</div>
-                      <div
-                        className="minus-button"
-                        onClick={() => handleMinus(item)}
-                      >
-                        <span>-</span>
-                      </div>
-                    </div>
-                    <div className="image-side">
-                      <Slider item={item} />
-                    </div>
+                    ))}
                   </div>
                 </div>
-              );
-            })}
+                <div className="item-right">
+                  <div className="amount-button">
+                    <div
+                      className="plus-button"
+                      onClick={() => handlePlus(item)}
+                    >
+                      <span>+</span>
+                    </div>
+                    <div className="quantity">{item.amount}</div>
+                    <div
+                      className="minus-button"
+                      onClick={() => handleMinus(item)}
+                    >
+                      <span>-</span>
+                    </div>
+                  </div>
+                  <div className="image-side">
+                    <Slider item={item} />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="data-result">
             <div className="label1">Tax 21%:</div>
