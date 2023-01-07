@@ -72,7 +72,7 @@ class MiniCart extends Component {
                                     id={`${attribute.id} ${item.id}`}
                                     name={attribute.name + index}
                                     value={item.value}
-                                    checked={item.selected}
+                                    defaultChecked={item.selected}
                                     disabled={true}
                                   />
                                   <label htmlFor={`${attribute.id} ${item.id}`}>
