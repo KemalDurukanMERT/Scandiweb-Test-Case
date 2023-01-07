@@ -14,6 +14,7 @@ import {
   HomeComponent,
   Image,
   ImageDiv,
+  InfoArea,
   MainOpacity,
   OutOfStock,
   PriceArea,
@@ -87,18 +88,10 @@ class Home extends Component {
 
               return products.map((item, index) => (
                 <div>
-                  <ProductCart
-                    key={index}
-                    className={`${!item.inStock && "disable"}`}
-                    // style={
-                    //   !item.inStock
-                    //     ? { pointerEvents: "none", cursor: "unset" }
-                    //     : {}
-                    // }
-                  >
+                  <ProductCart key={index}>
                     <Link
                       to={{ pathname: `/detail/${item.id}` }}
-                      style={{ textDecoration: "none", color: "black" }}
+                      className="link"
                     >
                       <div onClick={() => handleDetail()}>
                         <div>
@@ -109,30 +102,21 @@ class Home extends Component {
                             )}
                           </ImageDiv>
                           <div
-                            className="cartAddIcon"
-                            style={!item.inStock ? { display: "none" } : {}}
+                            className={!item.inStock ? "cartAddIcon-notStock" : "cartAddIcon"}
                           >
                             <CartIcon onClick={(e) => handleClick(e, item)}>
                               AddCart
                             </CartIcon>
                           </div>
                           <br />
-                          <div
-                            style={
-                              !item.inStock
-                                ? {
-                                    // background: "#ffffff",
-                                    opacity: "0.5",
-                                    marginLeft: "2rem",
-                                  }
-                                : { marginLeft: "2rem" }
-                            }
-                          >
+                          <InfoArea>
+                            <div className={!item.inStock ? "notInStock" : ""}>
                             <p>{item.name}</p>
                             <PriceArea>
                               <Price prices={item.prices} />
                             </PriceArea>
-                          </div>
+                            </div>
+                          </InfoArea>
                         </div>
                       </div>
                     </Link>

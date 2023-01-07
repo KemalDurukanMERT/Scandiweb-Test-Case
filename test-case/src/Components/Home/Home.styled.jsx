@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const HomeComponent = styled.div`
   position: relative;
-`
+`;
 
 export const CategoryName = styled.div`
   margin-left: 6.5rem;
-  margin-top:1rem;
+  margin-top: 1rem;
   padding-top: 2rem;
   font-weight: 600 normal;
   font-size: 4rem;
@@ -27,6 +27,10 @@ export const ProductList = styled.div`
 `;
 
 export const ProductCart = styled.div`
+  .link{
+    text-decoration: none;
+    color: black;
+  }
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -36,6 +40,19 @@ export const ProductCart = styled.div`
     transition: all 300ms ease-in-out;
     transform: scale(1.05);
     box-shadow: 4px 4px 40px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .cartAddIcon-notStock {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    bottom: 5rem;
+    cursor: pointer;
+
+    :hover {
+      transition: all 300ms ease-in-out;
+      transform: scale(1.3);
+    }
   }
 
   .cartAddIcon {
@@ -61,7 +78,7 @@ export const ImageDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:1rem;
+  padding: 1rem;
 `;
 
 export const Image = styled.img`
@@ -80,15 +97,22 @@ export const OutOfStock = styled.div`
   top: 0;
   left: 0;
   background: white;
-  opacity:0.3;
-  z-index:2;
+  opacity: 0.3;
+  z-index: 2;
 `;
 
 export const PriceArea = styled.div`
-  font-weight:700;
-  margin-top:1rem;
-`
+  font-weight: 700;
+  margin-top: 1rem;
+`;
 
+export const InfoArea = styled.div`
+  margin-left: 2rem;
+
+  .notInStock {
+    opacity: 0.5;
+  }
+`;
 
 export const MainOpacity = styled.div`
   width: 100%;
@@ -96,6 +120,6 @@ export const MainOpacity = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(57,55,72,0.22);
-  z-index:40;
-`
+  background: rgba(57, 55, 72, 0.22);
+  z-index: 40;
+`;
